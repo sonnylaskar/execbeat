@@ -1,8 +1,9 @@
 package beat
 
 import (
-	"github.com/elastic/beats/libbeat/common"
 	"time"
+
+	"github.com/elastic/beats/libbeat/common"
 )
 
 type ExecEvent struct {
@@ -17,6 +18,8 @@ type Exec struct {
 	StdOut   string `json:"stdout"`
 	StdErr   string `json:"stderr,omitempty"`
 	ExitCode int    `json:"exitCode"`
+	Args     string `json:"args,omitempty"`
+	Name     string `json:"name"`
 }
 
 func (h *ExecEvent) ToMapStr() common.MapStr {
