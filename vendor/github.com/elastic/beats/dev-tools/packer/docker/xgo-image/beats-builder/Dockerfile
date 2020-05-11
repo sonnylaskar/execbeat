@@ -6,7 +6,7 @@ MAINTAINER Tudor Golubenco <tudor@elastic.co>
 RUN \
 	dpkg --add-architecture i386 && \
 	apt-get update && \
-	apt-get install -y libpcap0.8-dev
+	apt-get install -y --force-yes libpcap0.8-dev
 
 RUN \
 	mkdir -p /libpcap && \

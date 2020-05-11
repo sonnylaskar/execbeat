@@ -6,7 +6,7 @@ TEST_ENVIRONMENT=false
 SNAPSHOT=no
 ES_BEATS?=./vendor/github.com/elastic/beats
 # GOPACKAGES=$(shell glide novendor)
-GOPACKAGES=$(shell go list ${BEAT_DIR}/... | grep -v /vendor/)
+GOPACKAGES=$(shell go list ${BEAT_PATH}/... | grep -v /vendor/)
 PREFIX?=.
 
 # Path to the libbeat Makefile
