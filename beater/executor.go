@@ -59,7 +59,7 @@ func (e *Executor) runOneTime() error {
 	var exitCode int = 0
 
 	cmdName := strings.TrimSpace(e.config.Command)
-
+	name := strings.TrimSpace(e.config.Name)
 	args := strings.TrimSpace(e.config.Args)
 	if len(args) > 0 {
 		cmdArgs = strings.Split(args, " ")
@@ -97,6 +97,8 @@ func (e *Executor) runOneTime() error {
 
 	commandEvent := Exec{
 		Command:  cmdName,
+		Args:     args,
+		Name:     name,
 		StdOut:   stdout.String(),
 		StdErr:   stderr.String(),
 		ExitCode: exitCode,
@@ -108,7 +110,6 @@ func (e *Executor) runOneTime() error {
 		Fields:       e.config.Fields,
 		Exec:         commandEvent,
 	}
-
 	e.execbeat.client.PublishEvent(event.ToMapStr())
 
 	return nil

@@ -16,6 +16,7 @@ type ExecConfig struct {
 	Args         string
 	DocumentType string            `config:"document_type"`
 	Fields       map[string]string `config:"fields"`
+	Name         string            `config:"name"`
 }
 
 type ConfigSettings struct {
