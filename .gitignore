@@ -1,5 +1,6 @@
 execbeat
 logs
 build
+dist
 .idea
 .DS_Store
