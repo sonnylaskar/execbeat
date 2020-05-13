@@ -37,7 +37,7 @@ RUN \
   OSX_SDK_PATH=https://github.com/phracker/MacOSX-SDKs/releases/download/MacOSX10.11.sdk/MacOSX10.11.sdk.tar.xz && \
   $FETCH $OSX_SDK_PATH f3430e3d923644e66c0c13f7a48754e7b6aa2e3f       && \
   \
-  git clone -b ppc-test https://github.com/tpoechtrager/osxcross.git && \
+  git clone  -b ppc-test https://github.com/tpoechtrager/osxcross.git && \
   mv `basename $OSX_SDK_PATH` /osxcross/tarballs/        && \
   \
   sed -i -e 's|-march=native||g' /osxcross/build_clang.sh /osxcross/wrapper/build.sh && \

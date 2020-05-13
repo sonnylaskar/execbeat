@@ -1,9 +1,9 @@
-package: github.com/christiangalsterer/execbeat
-homepage: https://github.com/christiangalsterer/execbeat
+package: github.com/sonnylaskar/execbeat
+homepage: https://github.com/sonnylaskar/execbeat
 license: Apache-2.0
 owners:
-- name: Christian Galsterer
-  homepage: https://github.com/christiangalsterer
+- name: Sonny Laskar
+  homepage: https://github.com/sonnylaskar
 import:
 - package: github.com/elastic/beats
   version: v5.6.2

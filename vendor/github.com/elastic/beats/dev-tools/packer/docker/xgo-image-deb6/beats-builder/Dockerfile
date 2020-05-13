@@ -14,7 +14,6 @@ RUN \
 	apt-get -o Acquire::Check-Valid-Until=false update && \
 	apt-get install -y --force-yes libpcap0.8-dev
 
-RUN git config --global http.sslVerify false
 # Old git version which does not support proxy with go get requires to fetch go-yaml directly
 RUN git clone https://github.com/go-yaml/yaml.git /go/src/gopkg.in/yaml.v2
 

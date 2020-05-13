@@ -13,5 +13,5 @@ RUN test -d ${PYTHON_ENV} || virtualenv ${PYTHON_ENV}
 RUN . ${PYTHON_ENV}/bin/activate && pip install nose jinja2 PyYAML nose-timer
 
 # Packetbeat specifics
-RUN apt-get install -y --force-yes libpcap-dev geoip-database && apt-get clean
+RUN apt-get install -y libpcap-dev geoip-database && apt-get clean
 
