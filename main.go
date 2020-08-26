@@ -7,7 +7,7 @@ import (
 	execbeat "github.com/sonnylaskar/execbeat/beater"
 )
 
-var version = "3.3.1"
+var version = "3.3.2"
 var name = "execbeat"
 
 func main() {
