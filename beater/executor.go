@@ -2,7 +2,6 @@ package beat
 
 import (
 	"bytes"
-	"fmt"
 	"os/exec"
 	"strings"
 	"syscall"
@@ -114,8 +113,8 @@ func (e *Executor) runOneTime() error {
 		Fields:       e.config.Fields,
 		Exec:         commandEvent,
 	}
-	// e.execbeat.client.PublishEvent(event.ToMapStr())
-	fmt.Println(event.ToMapStr())
+	e.execbeat.client.PublishEvent(event.ToMapStr())
+	// fmt.Println(event.ToMapStr())
 
 	return nil
 }
