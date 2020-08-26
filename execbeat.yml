@@ -8,10 +8,15 @@ execbeat:
     -
       # Optional cron expression, defines when to execute the command.
       # Default is every 1 minute.
-      #schedule:
+      schedule: "* * * * * *"
 
       # The command to execute by Execbeat
-      command: date
+      command: echo
+      args: "Will run every second"
+    -
+      command: echo
+      args: "Will run only once"
+
 
       # Optional arguments to be passed to the command to execute
       #args:

@@ -2,7 +2,7 @@ package config
 
 // Defaults for config variables which are not set
 const (
-	DefaultSchedule     string = "@every 1m"
+	DefaultSchedule     string = ""
 	DefaultDocumentType string = "execbeat"
 )
 

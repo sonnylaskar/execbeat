@@ -2,13 +2,15 @@ package beat
 
 import (
 	"bytes"
-	"github.com/christiangalsterer/execbeat/config"
-	"github.com/elastic/beats/libbeat/logp"
-	"github.com/robfig/cron"
+	"fmt"
 	"os/exec"
 	"strings"
 	"syscall"
 	"time"
+
+	"github.com/elastic/beats/libbeat/logp"
+	"github.com/robfig/cron"
+	"github.com/sonnylaskar/execbeat/config"
 )
 
 type Executor struct {
@@ -42,11 +44,13 @@ func (e *Executor) Run() {
 	if e.config.Schedule != "" {
 		logp.Debug("Execbeat", "Use schedule: [%w]", e.config.Schedule)
 		e.schedule = e.config.Schedule
+		cron := cron.New()
+		cron.AddFunc(e.schedule, func() { e.runOneTime() })
+		cron.Start()
+	} else {
+		e.runOneTime()
 	}
 
-	cron := cron.New()
-	cron.AddFunc(e.schedule, func() { e.runOneTime() })
-	cron.Start()
 }
 
 func (e *Executor) runOneTime() error {
@@ -110,7 +114,8 @@ func (e *Executor) runOneTime() error {
 		Fields:       e.config.Fields,
 		Exec:         commandEvent,
 	}
-	e.execbeat.client.PublishEvent(event.ToMapStr())
+	// e.execbeat.client.PublishEvent(event.ToMapStr())
+	fmt.Println(event.ToMapStr())
 
 	return nil
 }
