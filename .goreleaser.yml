@@ -35,3 +35,12 @@ changelog:
     exclude:
       - '^docs:'
       - '^test:'
+
+nfpms:
+  -
+    package_name: execbeat_3.3.2_pre
+    file_name_template: "execbeat_3.3.3_pre{{ .Os }}_{{ .Arch }}"
+    maintainer: Lavish Jain <lavishrjain1997@gmail.com>
+    formats:
+      - deb
+      - rpm
