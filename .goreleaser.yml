@@ -24,7 +24,7 @@ builds:
       - 6
       - 7
 archives:
-  - format: binary
+  - format: zip
 checksum:
   name_template: 'checksums.txt'
 snapshot:
